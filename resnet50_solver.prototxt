@@ -1,0 +1,18 @@
+net: "resnet50_train_val.prototxt"
+test_iter: 623
+test_interval: 1000
+base_lr: 0.0001
+display: 20
+max_iter: 3000000
+lr_policy: "fixed"
+momentum: 0.9
+weight_decay: 0.0001
+snapshot: 1000
+snapshot_prefix: "snapshots/resnet50_s4"
+solver_mode: GPU
+type: "SGD"
+
+test_share_memory: true  # val和train共享内存
+memory_opt: DIFF_REUSE   # 优化内存策略
+cudnn_mem_limit: 300     # cudnn使用最大内存为300M
+
